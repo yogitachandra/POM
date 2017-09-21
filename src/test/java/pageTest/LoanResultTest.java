@@ -2,7 +2,6 @@ package pageTest;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import org.junit.AfterClass;
 import org.junit.Test;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.LoanPage;
@@ -26,17 +25,10 @@ public class LoanResultTest extends BaseSetup {
 
 		LoanPage result = PageFactory.initElements(driver, LoanPage.class);
 		String title = driver.getTitle();
-		System.out.println(title);
-		result.testLandingPage();
 		
-		String amount = result.selectAmount();
-		System.out.println("amount is" + amount);
-		
-		String months = result.selectMonaten();
-		System.out.println("month" + months);
-		
-		String verwendung = result.selectVerwendung();
-		System.out.println("vervendung" + verwendung);
+		result.selectAmount();
+		result.selectMonaten();
+		result.selectVerwendung();
 		String result_title = result.clickWeiter();
 		
 		assertThat(title, is(LOAN_PAGETITLE));	
