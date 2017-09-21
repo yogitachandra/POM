@@ -63,32 +63,35 @@ public class BaseSetup {
 			driver = initChromeDriver(appURL);
 		}
 	}
-
-	/*
-	 * private static WebDriver initChromeDriver(String appURL) {
-	 * System.out.println("Launching google chrome with new profile..");
-	 * System.setProperty("webdriver.chrome.driver", driverPath +
-	 * "chromedriver"); WebDriver driver = new ChromeDriver();
-	 * driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	 * driver.manage().window().maximize(); driver.navigate().to(appURL); return
-	 * driver; }
-	 */
-
+/*
 	private static WebDriver initChromeDriver(String appURL) {
-		DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
-
-		capabilities.setCapability(CapabilityType.BROWSER_NAME, getParameters().getProperty(browser));
-
-		System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver");
-
-		// it is used to initialize the IE driver
-		WebDriver driver = new ChromeDriver(capabilities);
+		System.out.println("Launching google chrome with new profile..");
+		System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.navigate().to(appURL);
-
 		return driver;
-	}
+	}*/
+
+	
+
+	private static WebDriver initChromeDriver(String appURL) {
+	  DesiredCapabilities capabilities =
+	  DesiredCapabilities.internetExplorer();
+	  
+	  capabilities.setCapability(CapabilityType.BROWSER_NAME,
+	  getParameters().getProperty(browser));
+	  
+	  System.setProperty("webdriver.chrome.driver", driverPath +
+	  "chromedriver");
+	  
+	  // it is used to initialize the IE driver WebDriver driver = new
+	  ChromeDriver(capabilities); driver.manage().timeouts().implicitlyWait(10,
+	  TimeUnit.SECONDS); driver.manage().window().maximize();
+	  driver.navigate().to(appURL);
+	  
+	  return driver; }
 
 	private static WebDriver initFirefoxDriver(String appURL) {
 		System.out.println("Launching Firefox browser..");

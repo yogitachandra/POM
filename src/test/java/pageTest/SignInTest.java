@@ -19,7 +19,7 @@ public class SignInTest extends BaseSetup {
 	public static final String RESULT_PAGETITLE = "Sicheres Einloggen mit Zugangsdaten - smava.de";
 
 	@Test
-	public void testInValidEmail() {
+	public void testInValidLogin() {
 
 		SignInErrorPage signInError = PageFactory.initElements(driver, SignInErrorPage.class);
 
