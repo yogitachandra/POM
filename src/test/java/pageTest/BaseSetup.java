@@ -64,6 +64,7 @@ public class BaseSetup {
 	}
 
 	private static WebDriver initChromeDriver(String appURL) {
+		System.out.println("Launching Chrome browser..");
 		System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -72,7 +73,7 @@ public class BaseSetup {
 
 		return driver;
 	}
-
+	
 	private static WebDriver initFirefoxDriver(String appURL) {
 		System.out.println("Launching Firefox browser..");
 		WebDriver driver = new FirefoxDriver();
