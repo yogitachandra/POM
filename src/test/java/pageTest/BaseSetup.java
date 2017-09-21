@@ -50,21 +50,21 @@ public class BaseSetup {
 
 	protected static void setDriver(String browser, String appURL) {
 		switch (browser) {
-		case "Chrome":
+		case "chrome":
 			driver = initChromeDriver(appURL);
 			break;
 		case "firefox":
 			driver = initFirefoxDriver(appURL);
 			break;
 		default:
-			System.out.println("browser : " + browser + " is invalid, Launching Firefox as browser of choice..");
+			System.out.println("browser : " + browser + " is invalid, Launching Chrome as browser of choice..");
 			driver = initChromeDriver(appURL);
 		}
 	}
 
 	private static WebDriver initChromeDriver(String appURL) {
 		System.out.println("Launching google chrome with new profile..");
-		System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
