@@ -18,11 +18,11 @@ import pageObjects.LoanPage;
 
 public class LoanResultTest extends BaseSetup {
 	
-	public static final String LOAN_PAGETITLE = "SMAVA - Das Online-Vergleichsportal fÃ¼r Kredite | SMAVA";
+	public static final String LOAN_PAGETITLE = "SMAVA - Das Online-Vergleichsportal für Kredite | SMAVA";
 	public static final String RESULT_PAGETITLE = "Kredit beantragen | Kreditantrag in 4 Schritten | SMAVA";
 
 	@Test
-	public void testValidAddress() {
+	public void testLoanResult() {
 
 		LoanPage result = PageFactory.initElements(driver, LoanPage.class);
 		String title = driver.getTitle();
@@ -43,4 +43,10 @@ public class LoanResultTest extends BaseSetup {
 		assertThat(result_title,is(RESULT_PAGETITLE));		
 	}
 	
+	
+	
+	@AfterClass
+	public static void closeBrowser() {
+		driver.quit();
+	}
 }

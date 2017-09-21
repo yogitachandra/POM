@@ -6,14 +6,13 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.browserlaunchers.CapabilityType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
  * Setup and Tear down methods , Select browser and url from
@@ -63,35 +62,16 @@ public class BaseSetup {
 			driver = initChromeDriver(appURL);
 		}
 	}
-/*
+
 	private static WebDriver initChromeDriver(String appURL) {
-		System.out.println("Launching google chrome with new profile..");
-		System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.navigate().to(appURL);
+
 		return driver;
-	}*/
-
-	
-
-	private static WebDriver initChromeDriver(String appURL) {
-	  DesiredCapabilities capabilities =
-	  DesiredCapabilities.internetExplorer();
-	  
-	  capabilities.setCapability(CapabilityType.BROWSER_NAME,
-	  getParameters().getProperty(browser));
-	  
-	  System.setProperty("webdriver.chrome.driver", driverPath +
-	  "chromedriver");
-	  
-	  // it is used to initialize the IE driver WebDriver driver = new
-	  ChromeDriver(capabilities); driver.manage().timeouts().implicitlyWait(10,
-	  TimeUnit.SECONDS); driver.manage().window().maximize();
-	  driver.navigate().to(appURL);
-	  
-	  return driver; }
+	}
 
 	private static WebDriver initFirefoxDriver(String appURL) {
 		System.out.println("Launching Firefox browser..");
