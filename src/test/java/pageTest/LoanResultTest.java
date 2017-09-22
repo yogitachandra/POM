@@ -26,7 +26,6 @@ public class LoanResultTest extends BaseSetup {
 
 		LoanPage result = PageFactory.initElements(driver, LoanPage.class);
 		String title = driver.getTitle();
-		System.out.println(title);
 		result.testLandingPage();
 		
 		String amount = result.selectAmount();

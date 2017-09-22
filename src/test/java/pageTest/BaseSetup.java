@@ -24,6 +24,8 @@ public class BaseSetup {
 	public static String driverPath = getParameters().getProperty("driverPath");
 	public static String browser = getParameters().getProperty("browser");
 	public static String appURL = getParameters().getProperty("appURL");
+	public static String chromeDriver = getParameters().getProperty("chromeDriver");
+
 
 	public WebDriver getDriver() {
 		return driver;
@@ -65,7 +67,7 @@ public class BaseSetup {
 
 	private static WebDriver initChromeDriver(String appURL) {
 		System.out.println("Launching Chrome browser..");
-		System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver");
+		System.setProperty("webdriver.chrome.driver", driverPath + chromeDriver);
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();

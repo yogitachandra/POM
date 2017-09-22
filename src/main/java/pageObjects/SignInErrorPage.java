@@ -74,8 +74,6 @@ public class SignInErrorPage {
 	}
 
 	public String errorPage() {
-		// WebDriverWait wait = new WebDriverWait(webDriver, 10);
-
 		wait.until(ExpectedConditions.visibilityOf(errorMessage));
 
 		// wait till page is loaded

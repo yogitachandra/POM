@@ -13,8 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoanPage {
 
-	public static String testamount = "2750";
-
 	// Nettokreditbetrag
 	@FindBy(css = ".select1 .text")
 	private WebElement getAmount;
