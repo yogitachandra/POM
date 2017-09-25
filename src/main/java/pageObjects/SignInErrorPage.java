@@ -53,16 +53,16 @@ public class SignInErrorPage {
 
 	}
 
-	public void enterEmail() {
+	public void enterEmail(String email) {
 		emailTextBox.click();
-		emailTextBox.sendKeys("abc@gmail.co");
+		emailTextBox.sendKeys(email);
 		System.out.println("Entered email");
 
 	}
 
-	public void enterPassword() {
+	public void enterPassword(String password) {
 		passwordTextBox.click();
-		passwordTextBox.sendKeys("abc");
+		passwordTextBox.sendKeys(password);
 		System.out.println("Entered passwordTextBox");
 
 	}
