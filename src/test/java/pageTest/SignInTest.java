@@ -17,6 +17,8 @@ import pageObjects.SignInErrorPage;
 
 public class SignInTest extends BaseSetup {
 	public static final String RESULT_PAGETITLE = "Sicheres Einloggen mit Zugangsdaten - smava.de";
+	public static final String EMAIL= "abc@gmail.co";
+	public static final String PASSWORD= "abc";
 
 	@Test
 	public void testInValidLogin() {
@@ -24,8 +26,8 @@ public class SignInTest extends BaseSetup {
 		SignInErrorPage signInError = PageFactory.initElements(driver, SignInErrorPage.class);
 
 		signInError.clickAnmelden();
-		signInError.enterEmail();
-		signInError.enterPassword();
+		signInError.enterEmail(EMAIL);
+		signInError.enterPassword(PASSWORD);
 		signInError.signIn();
 		
 		String error = signInError.errorPage();
