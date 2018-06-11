@@ -1,4 +1,4 @@
-## Smava Task 
+## Task 
 Assignment based on POM framework , uses Page Factory along with Selenium ,Junit , Maven and Hamcrest. 
 
 ### User Stories
